@@ -1,8 +1,10 @@
 @OrderPlacing
   Feature: Testing order placing functionality
     @Selection
-    Scenario: Select App for order placing
-      Given User login to "https://www.google.com/"
-#      When User Search "S23"
-#      And User Add to cart
-#      Then User validate order appeared in Cart
+    Scenario Outline: Select App for order placing
+      Given User login to "<Application>"
+      When User Search "<Product>" in "<Application>"
+      Examples:
+        |  Application|Product  |
+        |  FlipKart   |  S23    |
+        |  Amazon     |  s24    |

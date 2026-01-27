@@ -7,6 +7,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.awt.*;
+import java.io.FileNotFoundException;
 
 
 public class MyStepdefs {
@@ -19,14 +21,13 @@ public class MyStepdefs {
 //AmznPage page = new AmznPage(hooks);
     }
     @Given("User login to {string}")
-    public void userLoginTo(String arg0) {
+    public void userLoginTo(String arg0) throws FileNotFoundException, InterruptedException {
     page.getsite(arg0);
     }
 
-    @When("User Search {string}")
-    public void userSearch(String arg0) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    @When("User Search {string} in {string}")
+    public void userSearchIn(String arg0, String arg1) throws AWTException, InterruptedException {
+        page.SearchProduct(arg0,arg1);
     }
 
     @And("User Add to cart")
@@ -40,4 +41,6 @@ public class MyStepdefs {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
+
+
 }
