@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions (
   features="src/test/resources/Features",
-  glue = {"stepDefinitions"},
+  glue = {"Classes.stepDefinitions"},
   plugin = {"pretty","html:target/cucumber-report.html","json:target/cucumber.json"},
         tags = "@OrderPlacing",
   monochrome = true
