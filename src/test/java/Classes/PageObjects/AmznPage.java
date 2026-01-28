@@ -50,6 +50,6 @@ else if (Application.equals("Amazon")) {
         r.keyPress(KeyEvent.VK_ENTER);
         r.keyRelease(KeyEvent.VK_ENTER);
     Thread.sleep(3000);
-
 }
+
 }
