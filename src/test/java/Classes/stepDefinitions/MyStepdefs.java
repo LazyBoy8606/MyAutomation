@@ -33,6 +33,7 @@ public class MyStepdefs {
 
     @And("^User validate (.*) in the Result$")
     public void userValidateSamsungGalaxySInTheResult(String Product) {
+        page.SmallWaitForElementToLoad(page.findElementUsingPartialText(Product));
        String a= page.findElementUsingPartialText(Product).getText();
         System.out.println(a);
     }
@@ -48,5 +49,10 @@ public class MyStepdefs {
     @And("^User validate date ([0-9]{2}\\/[0,9]{2}\\/[0,9]{4}) and time ([0-9]{2}:[0-9]{2}\\s+(AM|PM))$")
     public void userValidateDateAndTimePM(String date,String time) {
 
+    }
+
+    @And("User take a ScreenShot of {string}")
+    public void userTakeAScreenShotOf(String name) {
+        page.AttachScreeshot(name);
     }
 }

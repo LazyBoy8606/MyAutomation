@@ -35,16 +35,17 @@ public void getsite(String arg0) throws FileNotFoundException, InterruptedExcept
         String url= Application.get(arg0);
         System.out.println(url);
     driver.get(url);
-    Thread.sleep(4000);
+
 }
 public void SearchProduct(String product, String Application) throws AWTException, InterruptedException {
 if(Application.equals("FlipKart")){
+    LongWaitForElementToLoad(FlipKartSerchBox);
     FlipKartSerchBox.sendKeys(product);
-    Thread.sleep(3000);
     }
 else if (Application.equals("Amazon")) {
+    SmallWaitForElementToLoad(AmazoneSerchBox);
     AmazoneSerchBox.sendKeys(product);
-    Thread.sleep(3000);
+
     }
     Robot r = new Robot();
         r.keyPress(KeyEvent.VK_ENTER);
