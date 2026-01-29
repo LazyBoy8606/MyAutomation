@@ -20,7 +20,7 @@ public class AmznPage extends BasicPageObj{
 
     }
 
-    @FindBy (xpath = "//*[@class='lNPl8b' and contains(@title,'Search for Products')]")
+    @FindBy (className = "lNPl8b")
     public WebElement FlipKartSerchBox;
 
     @FindBy (id = "twotabsearchtextbox")
