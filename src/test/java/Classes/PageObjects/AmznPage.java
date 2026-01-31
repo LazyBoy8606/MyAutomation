@@ -1,14 +1,13 @@
 package Classes.PageObjects;
 
 import Classes.stepDefinitions.Hooks;
-import net.bytebuddy.asm.Advice;
-import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.yaml.snakeyaml.Yaml;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Map;
@@ -47,9 +46,8 @@ else if (Application.equals("Amazon")) {
     AmazoneSerchBox.sendKeys(product);
 
     }
-    Robot r = new Robot();
-        r.keyPress(KeyEvent.VK_ENTER);
-        r.keyRelease(KeyEvent.VK_ENTER);
+    Actions action = new Actions(driver);
+    action.sendKeys(Keys.ENTER).perform();
     Thread.sleep(3000);
 }
 
