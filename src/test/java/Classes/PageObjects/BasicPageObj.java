@@ -2,18 +2,14 @@ package Classes.PageObjects;
 
 import Classes.stepDefinitions.Hooks;
 import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
-import com.aventstack.extentreports.reporter.FileUtil;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
-import java.io.IOException;
 import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -24,7 +20,7 @@ public class BasicPageObj {
 
 
     public BasicPageObj(Hooks hooks) {
-      this.driver = hooks.getDriver();
+      this.driver = Hooks.getDriver();
         PageFactory.initElements(driver, this);
     }
 
